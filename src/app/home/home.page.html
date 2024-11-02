@@ -1,0 +1,55 @@
+<ion-content style="background-color: #344E41; --ion-background-color: #344E41;">
+  <div class="container">
+    <h2 style="text-align: center; font-size: 1.3rem; margin-top: 30px;">
+      {{ isEditMode ? 'Atualizar Produto' : 'Cadastrar Produto' }}
+    </h2><br>
+
+    <form (submit)="isEditMode ? updateProduct(currentItemId!) : addProduct()">
+      <div class="login-container">
+        <div class="input-div one">
+          <input class="input" type="text" [(ngModel)]="itemName" name="itemName" required placeholder="Nome"/>
+        </div>
+
+        <div class="input-div one">
+          <input class="input" type="number" [(ngModel)]="itemQuantity" name="itemQuantity" required placeholder="Quantidade"/>
+        </div>
+
+        <div class="input-div one">
+          <input class="input" type="text" [(ngModel)]="itemBrand" name="itemBrand" required placeholder="Marca"/>
+        </div>
+      </div>
+    
+      <input type="submit" class="btn" value="{{ isEditMode ? 'Atualizar' : 'Cadastrar' }}"/>
+</form>
+<br><br>
+
+    <hr style="background-color: #344E41; --ion-background-color: #344E41; border-top: 2px solid #DAD7CD;"><br>
+
+
+    <h3 style="text-align: center; color: #fff; font-size: 1.1rem;">Itens do Estoque</h3><br><br>
+    <div *ngFor="let item of items" class="item-card">
+      <h3>{{ item.name }}</h3>
+      <p>Quantidade: {{ item.quantity }}</p>
+      <p>Marca: {{ item.brand }}</p>
+      <div class="btn-container"> <!-- Nova div para os botões -->
+        <button class="btn-up" (click)="editProduct(item)">Editar</button>
+        <button class="btn-up" (click)="deleteProduct(item.id)">Excluir</button>
+      </div>
+    </div>
+
+  </div>
+</ion-content>
+
+<ion-footer style="background: #DAD7CD;">
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home" routerLink="/home">
+      <ion-icon name="home-outline" style="color: white;"></ion-icon>
+      <ion-label style="color: white;">Início</ion-label>
+    </ion-tab-button>
+    
+    <ion-tab-button tab="login" routerLink="/login">
+      <ion-icon name="log-in-outline" style="color: red;"></ion-icon>
+      <ion-label style="color: red;" (click)="logout()">Sair</ion-label>
+    </ion-tab-button>    
+  </ion-tab-bar>
+</ion-footer>

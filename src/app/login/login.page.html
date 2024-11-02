@@ -1,0 +1,44 @@
+<ion-content [fullscreen]="true">
+  <div class="container" style="padding-bottom: 180px;">
+    <div class="login-container">
+      <form (submit)="login()">
+        <h2>Entrar</h2>
+        <div class="input-div one">
+          <div class="i">
+            <img src="/assets/img/user.png" alt="" class="fas fa-user">
+          </div>
+          <div>
+            <input class="input" [(ngModel)]="email" type="email" name="email" placeholder="Email" required />
+          </div>
+        </div>
+        <div class="input-div two">
+          <div class="i">
+            <img src="/assets/img/senha.png" alt="" class="fas fa-key">
+          </div>
+          <div>
+            <input class="input" [(ngModel)]="password" type="password" name="password" placeholder="Senha" required />
+          </div>
+        </div>
+        <input type="submit" class="btn" value="Entrar" />
+        <p style="color: #000;">Esqueceu a senha?</p>
+        <a href="/forgot" style="color: #f00000;">Clique aqui!</a>
+        <div class="account">
+          <a routerLink="/registrar" style="color: #000; margin-top: 10px;">Cadastre-se</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer style="background: #DAD7CD;">
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home" routerLink="/home">
+      <ion-icon name="home-outline" style="color: white;"></ion-icon>
+      <ion-label style="color: white;">Início</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="login" routerLink="/login">
+      <ion-icon name="log-in-outline" style="color: white;"></ion-icon>
+      <ion-label style="color: white;">Login</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>

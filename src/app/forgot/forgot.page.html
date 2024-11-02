@@ -1,0 +1,29 @@
+<ion-content style="background-color: #344E41; --ion-background-color: #344E41;">
+  <div class="container">
+    <h2 style="text-align: center; font-size: 1.3rem; margin-top: 30px;">Mudar a senha</h2><br>
+    <form (submit)="resetPassword()">
+      <div class="login-container">
+        <div class="input-div one">
+          <h4 style="color: #000; text-align: center; font-size: 1rem; margin-bottom: 15px;">Coloque seu email para redefinição de senha.</h4>
+          <input class="input" type="email" [(ngModel)]="email" required placeholder="Email" name="email" />
+        </div>
+        <input type="submit" class="btn" value="Enviar" />
+      </div>
+    </form>
+  </div>
+</ion-content>
+
+
+
+<ion-footer style="background: #DAD7CD;">
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home" routerLink="/home">
+      <ion-icon name="home-outline" style="color: white;"></ion-icon>
+      <ion-label style="color: white;">Início</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="login" routerLink="/login">
+      <ion-icon name="log-in-outline" style="color: white;"></ion-icon>
+      <ion-label style="color: white;">Login</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>
