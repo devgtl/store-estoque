@@ -4,6 +4,26 @@
   box-sizing: border-box;
 }
 
+.logout-button {
+  --background: transparent;
+  --color: red; 
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  width: 150px;
+  transition: background-color 0.3s ease;
+  margin: 0 auto;
+
+  ion-icon {
+    color: red; 
+  }
+
+  &:hover {
+    --background: rgba(255, 0, 0, 0.1);
+  }
+}
+
+
 ion-content {
   display: flex; 
   align-items: center; 

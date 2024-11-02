@@ -1,5 +1,5 @@
 <ion-content style="background-color: #344E41; --ion-background-color: #344E41;">
-  <div class="container">
+  <div class="container">     
     <h2 style="text-align: center; font-size: 1.3rem; margin-top: 30px;">
       {{ isEditMode ? 'Atualizar Produto' : 'Cadastrar Produto' }}
     </h2><br>
@@ -23,6 +23,12 @@
 </form>
 <br><br>
 
+    <ion-button expand="block" color="light" routerLink="/login" (click)="logout()" class="logout-button">
+      <ion-icon slot="start" name="log-in-outline"></ion-icon>
+      <ion-label>Sair</ion-label>
+    </ion-button><!--Sair-->
+    <br><br>
+
     <hr style="background-color: #344E41; --ion-background-color: #344E41; border-top: 2px solid #DAD7CD;"><br>
 
 
@@ -45,11 +51,6 @@
     <ion-tab-button tab="home" routerLink="/home">
       <ion-icon name="home-outline" style="color: white;"></ion-icon>
       <ion-label style="color: white;">Início</ion-label>
-    </ion-tab-button>
-    
-    <ion-tab-button tab="login" routerLink="/login">
-      <ion-icon name="log-in-outline" style="color: red;"></ion-icon>
-      <ion-label style="color: red;" (click)="logout()">Sair</ion-label>
-    </ion-tab-button>    
+    </ion-tab-button>  
   </ion-tab-bar>
 </ion-footer>
